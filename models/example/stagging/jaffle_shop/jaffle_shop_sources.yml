@@ -1,0 +1,15 @@
+
+version: 2
+
+sources:
+  - name: jaffle_shop
+    schema: BRONZE
+    tables:
+      - name: customers
+        identifier: RAW_CUSTOMERS
+
+      - name: orders
+        identifier: RAW_ORDERS
+
+      - name: payments
+        identifier: RAW_PAYMENTS
