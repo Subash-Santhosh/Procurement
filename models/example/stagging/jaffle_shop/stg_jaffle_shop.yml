@@ -1,7 +1,7 @@
 version : 2
 
 models:
-  - name : stg_customers
+  - name : stg_jaffle_shop__customers
     description : "This is a staging model for customers"
     columns:
       - name : CUSTOMER_ID
@@ -10,7 +10,7 @@ models:
           - unique
           - not_null
           
-  - name : stg_orders
+  - name : stg_jaffle_shop__orders
     description : "This is a staging model for orders"
     columns:
       - name : ORDER_ID
@@ -18,3 +18,9 @@ models:
         data_tests : 
           - unique
           - not_null
+
+      - name : STATUS
+        description: "{{ docs('STATUS') }}"
+        data_tests :
+          - accepted_values:
+            values: ['completed', 'returned', 'placed']

@@ -4,7 +4,7 @@
 
 select *
 
-FROM {{ ref('stg_orders') }}
+FROM {{ ref('stg_jaffle_shop__orders') }}
 
 {% if status == 'completed'%}
 

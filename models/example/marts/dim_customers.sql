@@ -24,7 +24,7 @@ SELECT
     COALESCE(o.TOTAL_PAYMENT_AMOUNT, 0)
         AS TOTAL_PAYMENT_AMOUNT
 
-FROM {{ ref('stg_customers') }} c
+FROM {{ ref('stg_jaffle_shop__customers') }} c
 
 LEFT JOIN customer_orders o
     ON c.CUSTOMER_ID = o.CUSTOMER_ID

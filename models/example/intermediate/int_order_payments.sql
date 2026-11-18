@@ -3,14 +3,14 @@
 WITH orders AS (
     SELECT
         *
-    FROM {{ ref('stg_orders') }}
+    FROM {{ ref('stg_jaffle_shop__orders') }}
 ),
 
 payments AS (
     SELECT
         ORDER_ID,
         SUM(AMOUNT) AS TOTAL_PAYMENT_AMOUNT
-    FROM {{ ref('stg_payments') }}
+    FROM {{ ref('stg_jaffle_shop__payments') }}
     GROUP BY ORDER_ID
 )
 
